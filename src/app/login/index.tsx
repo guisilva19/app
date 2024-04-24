@@ -87,7 +87,7 @@ export default function Login() {
               mx="auto"
               backgroundColor="white"
               borderWidth={1}
-              onPress={() => navigation("home")}
+              onPress={() => navigation("signup")}
             >
               <Text fontSize={18} fontFamily="PathwayBold">
                 Quero me Cadastrar

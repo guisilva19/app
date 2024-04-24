@@ -122,7 +122,7 @@ export default function Primary() {
                 <MaterialIcons name="navigate-next" size={24} color="black" />
               }
             >
-              <Text fontFamily="PathwayBold" fontSize={20}>
+              <Text fontSize={20}>
                 Proximo
               </Text>
             </Button>

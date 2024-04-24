@@ -114,9 +114,7 @@ export default function Second() {
                 <MaterialIcons name="navigate-next" size={24} color="black" />
               }
             >
-              <Text fontFamily="PathwayBold" fontSize={20}>
-                Proximo
-              </Text>
+              <Text fontSize={20}>Proximo</Text>
             </Button>
           </Box>
         </Box>

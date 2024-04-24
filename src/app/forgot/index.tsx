@@ -1,56 +1,59 @@
-import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { colors } from "../../theme/colors";
+import { navigation } from "../../utils/navigation";
 import {
   Box,
   Center,
   FormControl,
-  Heading,
   Input,
+  Text,
   VStack,
   Button,
+  Pressable,
+  Icon,
+  Image,
 } from "native-base";
-import { colors } from "../../theme/colors";
+import { MaterialIcons } from "@expo/vector-icons";
 
-export default function ForgotPassword() {
+export default function SignUp() {
+  const [show, setShow] = React.useState(false);
+
   return (
     <>
-      <StatusBar style="light" />
-      <Center w="100%" style={{ backgroundColor: colors["background-light"] }}>
-        <Box mt="20" p="2" w="100%" h="100%" maxW="350" py="8" color="blue.500">
-          <Heading
-            size="lg"
-            color="coolGray.800"
-            _dark={{
-              color: "warmGray.50",
-            }}
-            fontWeight="semibold"
-          >
-            Recover password
-          </Heading>
-          <Heading
-            mt="1"
-            _dark={{
-              color: "warmGray.200",
-            }}
-            fontWeight="medium"
-            size="xs"
-          >
-            Enter email to continue!
-          </Heading>
+      <Center
+        w="100%"
+        h="100%"
+        justifyContent="start"
+        style={{ backgroundColor: colors.background }}
+      >
+        <Box p="2" py="8" mt="20" w="100%" maxW="350">
+          <Center>
+            <Image source={require("../../assets/logo.png")} />
+          </Center>
+
           <VStack space={3} mt="5">
             <FormControl>
               <FormControl.Label>Email</FormControl.Label>
-              <Input h={52} />
+              <Input h={52} backgroundColor="#fff" />
             </FormControl>
 
+            <Text fontFamily="PathwayRegular" fontSize={15}>
+              Entre com o seu e-mail que enviaremos uma senha temporária para o
+              endereço cadastrado.
+            </Text>
+
             <Button
-              mt="2"
+              w="80%"
               h={52}
-              borderRadius={4}
-              size={"md"}
-              fontWeight="semibold"
-              colorScheme={colors.primary}
+              mt={5}
+              rounded="2xl"
+              mx="auto"
+              colorScheme={colors.yellow}
+              onPress={() => navigation("home")}
             >
-              Submit
+              <Text fontSize={18} fontFamily="PathwayBold">
+                Salvar
+              </Text>
             </Button>
           </VStack>
         </Box>

@@ -1,93 +1,81 @@
-import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { colors } from "../../theme/colors";
+import { navigation } from "../../utils/navigation";
 import {
   Box,
   Center,
   FormControl,
-  Heading,
   Input,
+  Text,
   VStack,
   Button,
-  HStack,
+  Pressable,
+  Icon,
+  Image,
 } from "native-base";
-import { colors } from "../../theme/colors";
+import { MaterialIcons } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
 
 export default function SignUp() {
+  const [show, setShow] = React.useState(false);
+
   return (
     <>
-      <StatusBar style="light" />
-      <Center w="100%" style={{ backgroundColor: colors["background-light"] }}>
-        <Box mt="20" p="2" w="100%" h="100%" maxW="350" py="8" color="blue.500">
-          <Heading
-            size="lg"
-            color="coolGray.800"
-            _dark={{
-              color: "warmGray.50",
-            }}
-            fontWeight="semibold"
-          >
-            Welcome
-          </Heading>
-          <Heading
-            mt="1"
-            _dark={{
-              color: "warmGray.200",
-            }}
-            fontWeight="medium"
-            size="xs"
-          >
-            Sign up to continue!
-          </Heading>
+      <Center
+        w="100%"
+        h="100%"
+        justifyContent="start"
+        style={{ backgroundColor: colors.background }}
+      >
+        <Box p="2" py="8" mt="20" w="100%" maxW="350">
+          <Center>
+            <Image source={require("../../assets/logo.png")} />
+          </Center>
+
           <VStack space={3} mt="5">
             <FormControl>
-              <FormControl.Label>Nome</FormControl.Label>
-              <Input />
-            </FormControl>
-
-            <FormControl>
               <FormControl.Label>Email</FormControl.Label>
-              <Input />
+              <Input h={52} backgroundColor="#fff" />
             </FormControl>
-
-            <HStack justifyContent="space-between">
-              <FormControl w="48%">
-                <FormControl.Label>Password</FormControl.Label>
-                <Input type="password" />
-              </FormControl>
-              <FormControl w="48%">
-                <FormControl.Label>Confirm Password</FormControl.Label>
-                <Input type="password" />
-              </FormControl>
-            </HStack>
-
             <FormControl>
-              <FormControl.Label>Phone Number</FormControl.Label>
-              <Input />
+              <FormControl.Label>Telefone</FormControl.Label>
+              <Input h={52} backgroundColor="#fff" />
+            </FormControl>
+            <FormControl>
+              <FormControl.Label>Password</FormControl.Label>
+              <Input
+                backgroundColor="#fff"
+                h={52}
+                type={show ? "text" : "password"}
+                InputRightElement={
+                  <Pressable onPress={() => setShow(!show)}>
+                    <Icon
+                      as={
+                        <MaterialIcons
+                          name={show ? "visibility" : "visibility-off"}
+                        />
+                      }
+                      size={5}
+                      mr="2"
+                      color="muted.400"
+                    />
+                  </Pressable>
+                }
+              />
             </FormControl>
 
-            <HStack justifyContent="space-between">
-              <FormControl w="48%">
-                <FormControl.Label>Receiving Bank</FormControl.Label>
-                <Input type="password" />
-              </FormControl>
-              <FormControl w="48%">
-                <FormControl.Label>Account number</FormControl.Label>
-                <Input type="password" />
-              </FormControl>
-            </HStack>
-
-            <HStack justifyContent="space-between">
-              <FormControl w="48%">
-                <FormControl.Label>Aba / Routing number</FormControl.Label>
-                <Input type="password" />
-              </FormControl>
-              <FormControl w="48%">
-                <FormControl.Label>Swift code</FormControl.Label>
-                <Input type="password" />
-              </FormControl>
-            </HStack>
-
-            <Button mt="2" colorScheme="blue">
-              Sign up
+            <Button
+              w="80%"
+              h={52}
+              mt={5}
+              rounded="2xl"
+              mx="auto"
+              colorScheme={colors.yellow}
+              onPress={() => navigation("home")}
+            >
+              <Text fontSize={18} fontFamily="PathwayBold">
+                Salvar
+              </Text>
             </Button>
           </VStack>
         </Box>

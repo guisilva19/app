@@ -28,34 +28,8 @@ export default function Layout() {
             <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="second" options={{ headerShown: false }} />
             <Stack.Screen name="login" options={{ headerShown: false }} />
-            <Stack.Screen
-              name="signup"
-              options={{
-                title: "SignUp",
-                headerBackTitle: "Back",
-                headerStyle: {
-                  // backgroundColor: colors.primary,
-                },
-                headerTintColor: "#ffffff",
-                headerTitleStyle: {
-                  fontWeight: "bold",
-                },
-              }}
-            />
-            <Stack.Screen
-              name="forgot"
-              options={{
-                title: "Forgot Password",
-                headerBackTitle: "Back",
-                headerStyle: {
-                  // backgroundColor: colors.primary,
-                },
-                headerTintColor: "#ffffff",
-                headerTitleStyle: {
-                  fontWeight: "bold",
-                },
-              }}
-            />
+            <Stack.Screen name="signup" options={{ headerShown: false }} />
+            <Stack.Screen name="forgot" options={{ headerShown: false }} />
             <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           </Stack>
         </NativeBaseProvider>
