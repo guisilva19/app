@@ -1,9 +1,25 @@
 import { Stack } from "expo-router";
 import { ContextProvider } from "../context/context";
 import { NativeBaseProvider } from "native-base";
-import { colors } from "../theme/colors";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
 
 export default function Layout() {
+  const [fontsLoaded, fontError] = useFonts({
+    PathwayRegular: require("../../assets/fonts/PathwayExtreme_120pt-Regular.ttf"),
+    PathwayBold: require("../../assets/fonts/PathwayExtreme_120pt-Bold.ttf"),
+  });
+
+  useEffect(() => {
+    const loadingFonts = async () => {
+      if (fontsLoaded || fontError) {
+        await SplashScreen.hideAsync();
+      }
+    };
+    loadingFonts();
+  }, []);
+
   return (
     <>
       <ContextProvider>
@@ -16,7 +32,7 @@ export default function Layout() {
                 title: "SignUp",
                 headerBackTitle: "Back",
                 headerStyle: {
-                  backgroundColor: colors.primary,
+                  // backgroundColor: colors.primary,
                 },
                 headerTintColor: "#ffffff",
                 headerTitleStyle: {
@@ -30,7 +46,7 @@ export default function Layout() {
                 title: "Forgot Password",
                 headerBackTitle: "Back",
                 headerStyle: {
-                  backgroundColor: colors.primary,
+                  // backgroundColor: colors.primary,
                 },
                 headerTintColor: "#ffffff",
                 headerTitleStyle: {

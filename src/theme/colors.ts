@@ -1,9 +1,11 @@
 interface IColors {
-  primary: string;
-  "background-light": string;
+  yellow: string;
+  greenDark: string;
+  background: string;
 }
 
 export const colors: IColors = {
-  primary: "rgb(29, 78, 216)",
-  "background-light": "rgb(240 249 255)",
+  yellow: "rgba(255, 204, 50, 1)",
+  greenDark: "rgba(40, 60, 69, 1)",
+  background: "rgba(239, 248, 249, 1)",
 };
