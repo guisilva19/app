@@ -11,11 +11,10 @@ import {
   HStack,
   Button,
 } from "native-base";
-import { AntDesign } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
-export default function Primary() {
+export default function Second() {
   return (
     <>
       <VStack justifyContent="space-between" w="100%" h="100%">
@@ -33,10 +32,10 @@ export default function Primary() {
 
             <Box mt={7}>
               <Heading fontFamily="PathwayBold" fontSize={32}>
-                Bem vindo ao
+                Este aplicativo não
               </Heading>
               <Heading fontFamily="PathwayBold" fontSize={32}>
-                DivorcioWeb!
+                é para você se:
               </Heading>
             </Box>
 
@@ -44,74 +43,67 @@ export default function Primary() {
               <HStack space={3}>
                 <Text>-</Text>
                 <Text fontFamily="PathwayRegular" fontSize={16}>
-                  Simplificando o processo de {"\n"}divórcio para você.
+                  Divórcio litigioso;
                 </Text>
               </HStack>
               <HStack space={3}>
                 <Text>-</Text>
                 <Text fontFamily="PathwayRegular" fontSize={16}>
-                  Vamos ajudá-lo a navegar nessa {"\n"}jornada com facilidade.
+                  Possui filhos menores de idade;
+                </Text>
+              </HStack>
+              <HStack space={3}>
+                <Text>-</Text>
+                <Text fontFamily="PathwayRegular" fontSize={16}>
+                  Possui bens e imóveis em conjunto.
                 </Text>
               </HStack>
             </Box>
 
-            <HStack
-              justifyContent="space-between"
+            <VStack
+              justifyContent=""
               alignItems="center"
               padding="2px"
-              backgroundColor={colors.greenDark}
+              backgroundColor="white"
+              borderWidth={2}
               w="100%"
-              h={60}
+              h={130}
               rounded="xl"
               mt={6}
+              borderColor="gray.300"
             >
-              <Box w="20%" alignItems={"center"}>
-                <AntDesign
-                  name="exclamationcircleo"
-                  size={30}
-                  color="white"
-                  mx="auto"
-                />
-              </Box>
               <Box
-                backgroundColor="white"
-                w="80%"
-                h="100%"
-                borderTopRightRadius="10px"
-                borderBottomRightRadius="10px"
+                w="90%"
+                h="50%"
                 justifyContent="center"
                 alignItems="center"
                 paddingX={2}
               >
-                <Text fontFamily="PathwayRegular">
-                  Este processo é legalmente válido de acordo com as leis
-                  brasileiras
+                <Text
+                  textAlign="center"
+                  fontFamily="PathwayRegular"
+                  fontSize={16}
+                >
+                  Precisa de algum suporte? Entre em contato com nossos
+                  advogados.
                 </Text>
               </Box>
-            </HStack>
-
-            <HStack
-              mt={8}
-              rounded="lg"
-              width="230px"
-              h={52}
-              justifyContent="space-between"
-              backgroundColor="white"
-              alignItems="center"
-              paddingX={5}
-              space={2}
-            >
-              <Box w="20%">
-                <Feather name="youtube" size={30} color="black" />
-              </Box>
-              <Text w="80%" fontFamily="PathwayRegular">
-                Se tiver dúvidas assista {"\n"}a este vídeo explicativo.
-              </Text>
-            </HStack>
+              <HStack
+                w="80%"
+                alignItems="center"
+                justifyContent="center"
+                space={2}
+              >
+                <FontAwesome name="whatsapp" size={36} color="black" />
+                <Text fontFamily="PathwayBold" fontSize={30}>
+                  21 98757-8661
+                </Text>
+              </HStack>
+            </VStack>
           </VStack>
           <Box alignItems="flex-end" w="80%">
             <Button
-              onPress={() => navigation("second")}
+              onPress={() => navigation("login")}
               backgroundColor={colors.yellow}
               w="180px"
               h={52}
