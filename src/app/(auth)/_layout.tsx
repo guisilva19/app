@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router";
-import { Feather, AntDesign } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
-import { Box, Text } from "native-base";
+import { AntDesign } from "@expo/vector-icons";
+import { Text } from "native-base";
+import { colors } from "../../theme/colors";
 
 export default function Layout() {
   return (
@@ -9,10 +9,12 @@ export default function Layout() {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
+
           headerShown: false,
+          headerShadowVisible: false,
           tabBarStyle: {
-            backgroundColor: "#1d4ed8",
-            paddingVertical: 10,
+            backgroundColor: colors.greenDark,
+            paddingTop: 5,
           },
         }}
       >
@@ -26,9 +28,13 @@ export default function Layout() {
             headerShown: false,
             tabBarIcon: ({ focused, size }) => {
               if (focused) {
-                return <Feather name="home" size={size} color="#ffffff" />;
+                return (
+                  <AntDesign name="calendar" size={size} color="#ffffff" />
+                );
               }
-              return <Feather name="home" size={size} color="#dadada7f" />;
+              return (
+                <AntDesign name="calendar" size={size} color="#dadada7f" />
+              );
             },
           }}
         />
@@ -39,13 +45,9 @@ export default function Layout() {
             headerShown: false,
             tabBarIcon: ({ focused, size }) => {
               if (focused) {
-                return (
-                  <AntDesign name="barschart" size={size} color="#ffffff" />
-                );
+                return <AntDesign name="upload" size={size} color="#ffffff" />;
               }
-              return (
-                <AntDesign name="barschart" size={size} color="#dadada7f" />
-              );
+              return <AntDesign name="upload" size={size} color="#dadada7f" />;
             },
           }}
         />
@@ -57,36 +59,11 @@ export default function Layout() {
             tabBarIcon: ({ focused, size }) => {
               if (focused) {
                 return (
-                  <AntDesign name="linechart" size={size} color="#ffffff" />
+                  <AntDesign name="creditcard" size={size} color="#ffffff" />
                 );
               }
               return (
-                <AntDesign name="linechart" size={size} color="#dadada7f" />
-              );
-            },
-          }}
-        />
-        <Tabs.Screen
-          name="documents"
-          options={{
-            title: "Documents",
-            headerShown: false,
-            tabBarIcon: ({ focused, size }) => {
-              if (focused) {
-                return (
-                  <Ionicons
-                    name="documents-outline"
-                    size={size}
-                    color="#ffffff"
-                  />
-                );
-              }
-              return (
-                <Ionicons
-                  name="documents-outline"
-                  size={size}
-                  color="#dadada7f"
-                />
+                <AntDesign name="creditcard" size={size} color="#dadada7f" />
               );
             },
           }}
@@ -101,6 +78,19 @@ export default function Layout() {
                 return <AntDesign name="user" size={size} color="#ffffff" />;
               }
               return <AntDesign name="user" size={size} color="#dadada7f" />;
+            },
+          }}
+        />
+        <Tabs.Screen
+          name="documents"
+          options={{
+            title: "Documents",
+            headerShown: false,
+            tabBarIcon: ({ focused, size }) => {
+              if (focused) {
+                return <AntDesign name="setting" size={size} color="#ffffff" />;
+              }
+              return <AntDesign name="setting" size={size} color="#dadada7f" />;
             },
           }}
         />

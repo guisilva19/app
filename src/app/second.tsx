@@ -27,7 +27,7 @@ export default function Second() {
         >
           <VStack p="2" py="8" mt="10" w="100%" maxW="350">
             <Center>
-              <Image source={require("../assets/illustration1.png")} />
+              <Image source={require("../assets/illustration2.png")} />
             </Center>
 
             <Box mt={7}>

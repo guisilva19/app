@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 import { ContextProvider } from "../context/context";
-import { NativeBaseProvider } from "native-base";
+import { Box, Image, NativeBaseProvider } from "native-base";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
@@ -30,7 +30,23 @@ export default function Layout() {
             <Stack.Screen name="login" options={{ headerShown: false }} />
             <Stack.Screen name="signup" options={{ headerShown: false }} />
             <Stack.Screen name="forgot" options={{ headerShown: false }} />
-            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+            <Stack.Screen
+              name="(auth)"
+              options={{
+                headerBackVisible: false,
+                headerTitle: "",
+                headerLeft: () => (
+                  <Box paddingBottom={5}>
+                    <Image source={require("../assets/logo-min.png")} />
+                  </Box>
+                ),
+                headerRight: () => (
+                  <Box>
+                    <Image source={require("../assets/name.png")} />
+                  </Box>
+                ),
+              }}
+            />
           </Stack>
         </NativeBaseProvider>
       </ContextProvider>
