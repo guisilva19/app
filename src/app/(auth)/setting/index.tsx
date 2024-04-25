@@ -7,8 +7,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import Footer from "../../../components/Footer/Footer";
+import { useGlobalContext } from "../../../context/context";
 
 export default function Setting() {
+  const { navigation } = useGlobalContext();
+
   return (
     <>
       <ScrollView style={{ backgroundColor: colors.background }}>
@@ -34,6 +37,7 @@ export default function Setting() {
 
             <VStack mt={12}>
               <Button
+                onPress={() => navigation("change-password")}
                 justifyContent={"flex-start"}
                 backgroundColor={"transparent"}
                 leftIcon={<AntDesign name="lock1" size={25} color="black" />}

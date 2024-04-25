@@ -18,7 +18,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import Loading from "../../components/Loading/Loading";
 import { useGlobalContext } from "../../context/context";
 
-export default function Login() {
+export default function SignIn() {
   const [show, setShow] = React.useState(false);
   const { isLoading, navigation } = useGlobalContext();
 

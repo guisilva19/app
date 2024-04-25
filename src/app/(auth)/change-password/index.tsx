@@ -41,10 +41,11 @@ export default function ChangePassword() {
             mt={20}
           >
             <Heading fontFamily="PathwayBold" fontSize={32}>
-              Configurações
+              Trocar senha
             </Heading>
             <Text fontFamily="PathwayRegular" fontSize={16} mt={2}>
-              Acompanhe abaixo as etapas agendas
+              Para sua segurança, você precisa digitar a senha atual para poder
+              resetá-lá.
             </Text>
 
             <VStack space={3} mt="5">

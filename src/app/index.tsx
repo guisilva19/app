@@ -14,6 +14,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useGlobalContext } from "../context/context";
+import { screens } from "../mock/screens";
 
 export default function Primary() {
   const { navigation } = useGlobalContext();
@@ -116,7 +117,7 @@ export default function Primary() {
         </VStack>
         <Box alignItems="flex-end" w="80%">
           <Button
-            onPress={() => navigation("change-password")}
+            onPress={() => navigation(screens.second)}
             backgroundColor={colors.yellow}
             w="180px"
             h={52}

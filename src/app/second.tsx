@@ -13,6 +13,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import { useGlobalContext } from "../context/context";
 import CardWhatsApp from "../components/CardWhatsApp/CardWhatsApp";
+import { screens } from "../mock/screens";
 
 export default function Second() {
   const { navigation } = useGlobalContext();
@@ -64,7 +65,7 @@ export default function Second() {
           <CardWhatsApp />
           <Box alignItems="flex-end" w="80%">
             <Button
-              onPress={() => navigation("login")}
+              onPress={() => navigation(screens.signin)}
               backgroundColor={colors.yellow}
               w="180px"
               h={52}
