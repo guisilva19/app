@@ -1,6 +1,5 @@
 import React from "react";
 import { colors } from "../theme/colors";
-import { navigation } from "../utils/navigation";
 import {
   Box,
   Center,
@@ -12,9 +11,11 @@ import {
   Button,
 } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
+import { useGlobalContext } from "../context/context";
+import CardWhatsApp from "../components/CardWhatsApp/CardWhatsApp";
 
 export default function Second() {
+  const { navigation } = useGlobalContext();
   return (
     <>
       <VStack justifyContent="space-between" w="100%" h="100%">
@@ -59,48 +60,8 @@ export default function Second() {
                 </Text>
               </HStack>
             </Box>
-
-            <VStack
-              justifyContent=""
-              alignItems="center"
-              padding="2px"
-              backgroundColor="white"
-              borderWidth={2}
-              w="100%"
-              h={130}
-              rounded="xl"
-              mt={6}
-              borderColor="gray.300"
-            >
-              <Box
-                w="90%"
-                h="50%"
-                justifyContent="center"
-                alignItems="center"
-                paddingX={2}
-              >
-                <Text
-                  textAlign="center"
-                  fontFamily="PathwayRegular"
-                  fontSize={16}
-                >
-                  Precisa de algum suporte? Entre em contato com nossos
-                  advogados.
-                </Text>
-              </Box>
-              <HStack
-                w="80%"
-                alignItems="center"
-                justifyContent="center"
-                space={2}
-              >
-                <FontAwesome name="whatsapp" size={36} color="black" />
-                <Text fontFamily="PathwayBold" fontSize={30}>
-                  21 98757-8661
-                </Text>
-              </HStack>
-            </VStack>
           </VStack>
+          <CardWhatsApp />
           <Box alignItems="flex-end" w="80%">
             <Button
               onPress={() => navigation("login")}
