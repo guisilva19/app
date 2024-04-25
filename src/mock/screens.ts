@@ -10,4 +10,5 @@ export const screens: IScreens = {
   changePassword: "change-password",
   conjuge: "conjuge",
   setting: "setting",
+  upload: "upload",
 };

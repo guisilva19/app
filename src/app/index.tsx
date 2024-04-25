@@ -67,7 +67,7 @@ export default function Primary() {
             padding="2px"
             backgroundColor={colors.greenDark}
             w="100%"
-            h={60}
+            h={"16"}
             rounded="xl"
             mt={6}
           >
@@ -117,7 +117,7 @@ export default function Primary() {
         </VStack>
         <Box alignItems="flex-end" w="80%">
           <Button
-            onPress={() => navigation(screens.second)}
+            onPress={() => navigation(screens.upload)}
             backgroundColor={colors.yellow}
             w="180px"
             h={52}

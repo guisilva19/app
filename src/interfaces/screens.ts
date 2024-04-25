@@ -8,4 +8,5 @@ export interface IScreens {
   changePassword: "change-password";
   conjuge: "conjuge";
   setting: "setting";
+  upload: "upload";
 }

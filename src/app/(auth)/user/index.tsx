@@ -22,6 +22,7 @@ import { useGlobalContext } from "../../../context/context";
 import { MaterialIcons } from "@expo/vector-icons";
 import { countrys } from "../../../mock/countrys";
 import Footer from "../../../components/Footer/Footer";
+import { screens } from "../../../mock/screens";
 
 export default function User() {
   const [service, setService] = React.useState("");
@@ -234,7 +235,7 @@ export default function User() {
 
               <Box alignItems="flex-end" w="100%" mt={10}>
                 <Button
-                  onPress={() => navigation("user")}
+                  onPress={() => navigation(screens.upload)}
                   backgroundColor={colors.yellow}
                   w="230px"
                   h={52}

@@ -13,10 +13,7 @@ import { colors } from "../../../theme/colors";
 import React from "react";
 
 import { ScrollView } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
-import Footer from "../../../components/Footer/Footer";
 import { useGlobalContext } from "../../../context/context";
 
 export default function ChangePassword() {
