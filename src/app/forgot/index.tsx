@@ -1,6 +1,5 @@
 import React from "react";
 import { colors } from "../../theme/colors";
-import { navigation } from "../../utils/navigation";
 import {
   Box,
   Center,
@@ -9,14 +8,12 @@ import {
   Text,
   VStack,
   Button,
-  Pressable,
-  Icon,
   Image,
 } from "native-base";
-import { MaterialIcons } from "@expo/vector-icons";
+import { useGlobalContext } from "../../context/context";
 
 export default function SignUp() {
-  const [show, setShow] = React.useState(false);
+  const { navigation } = useGlobalContext()
 
   return (
     <>
