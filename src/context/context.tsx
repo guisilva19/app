@@ -1,8 +1,14 @@
+import { router } from "expo-router";
 import React from "react";
 
 interface IContext {
   isAuth: boolean;
   setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  selected: string;
+
+  navigation: (path: string) => void;
 }
 
 export const Context = React.createContext<IContext>({} as IContext);
@@ -13,8 +19,25 @@ export const ContextProvider = ({
   children: React.ReactNode;
 }) => {
   const [isAuth, setIsAuth] = React.useState<boolean>(false);
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [selected, setSelected] = React.useState("setting");
+
+  const navigation = (path: string) => {
+    router.navigate("/" + path);
+    setSelected(path);
+  };
+
   return (
-    <Context.Provider value={{ isAuth, setIsAuth }}>
+    <Context.Provider
+      value={{
+        isAuth,
+        setIsAuth,
+        isLoading,
+        setIsLoading,
+        selected,
+        navigation,
+      }}
+    >
       {children}
     </Context.Provider>
   );
