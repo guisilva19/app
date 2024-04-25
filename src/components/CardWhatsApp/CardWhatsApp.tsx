@@ -20,7 +20,7 @@ export default function CardWhatsApp() {
           rounded="xl"
           borderColor="gray.300"
         >
-          <Box w="300px" h="50%" justifyContent="center" paddingX={2}>
+          <Box w="full" h="50%" justifyContent="center" paddingX={2}>
             <Text textAlign="center" fontFamily="PathwayRegular" fontSize={14}>
               Precisa de algum suporte? Entre em contato com nossos advogados.
             </Text>
