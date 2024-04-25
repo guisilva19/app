@@ -1,13 +1,17 @@
-import { Box, HStack, Text, VStack } from "native-base";
+import { Box, Center, HStack, Link, Text, VStack } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
+import { Button, Linking, TouchableOpacity } from "react-native";
+import { redirectWhatsApp } from "../../utils/whatsapp/redirect";
 
 export default function CardWhatsApp() {
   return (
     <>
-      <Box marginY={5}>
+      <TouchableOpacity
+        style={{ marginVertical: 20 }}
+        onPress={() => redirectWhatsApp()}
+      >
         <VStack
           justifyContent=""
-          alignItems="center"
           padding="2px"
           backgroundColor="white"
           borderWidth={2}
@@ -16,25 +20,24 @@ export default function CardWhatsApp() {
           rounded="xl"
           borderColor="gray.300"
         >
-          <Box
-            w="90%"
-            h="50%"
-            justifyContent="center"
-            alignItems="center"
-            paddingX={2}
-          >
-            <Text textAlign="center" fontFamily="PathwayRegular" fontSize={16}>
+          <Box w="300px" h="50%" justifyContent="center" paddingX={2}>
+            <Text textAlign="center" fontFamily="PathwayRegular" fontSize={14}>
               Precisa de algum suporte? Entre em contato com nossos advogados.
             </Text>
           </Box>
-          <HStack w="80%" alignItems="center" space={2}>
+          <HStack
+            w="100%"
+            alignItems="center"
+            justifyContent={"center"}
+            space={2}
+          >
             <FontAwesome name="whatsapp" size={36} color="black" />
-            <Text fontFamily="PathwayBold" fontSize={30}>
+            <Text fontFamily="PathwayBold" fontSize={26}>
               21 98757-8661
             </Text>
           </HStack>
         </VStack>
-      </Box>
+      </TouchableOpacity>
     </>
   );
 }

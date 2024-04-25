@@ -237,8 +237,8 @@ export default function User() {
                 <Button
                   onPress={() => navigation(screens.upload)}
                   backgroundColor={colors.yellow}
-                  w="230px"
                   h={52}
+                  px={"4"}
                   rounded="2xl"
                   textDecorationColor="black"
                   flexDirection="row"
@@ -250,7 +250,7 @@ export default function User() {
                     />
                   }
                 >
-                  <Text fontSize={20} fontFamily="PathwayBold">
+                  <Text fontSize={16} fontFamily="PathwayBold">
                     Salvar e Proximo
                   </Text>
                 </Button>

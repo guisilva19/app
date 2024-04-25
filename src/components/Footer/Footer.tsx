@@ -1,7 +1,8 @@
 import { AntDesign } from "@expo/vector-icons";
-import { Box, Button, Center, HStack } from "native-base";
+import {  Button, Center, HStack } from "native-base";
 import { colors } from "../../theme/colors";
 import { useGlobalContext } from "../../context/context";
+import { screens } from "../../mock/screens";
 
 export default function Footer() {
   const size = 30;
@@ -36,6 +37,7 @@ export default function Footer() {
           <Button
             w={"1/6"}
             h={"full"}
+            onPress={() => navigation(screens.upload)}
             alignItems={"center"}
             justifyContent={"center"}
             opacity={selected === "upload" ? 1 : 50}
@@ -72,7 +74,7 @@ export default function Footer() {
             <AntDesign name="user" size={size} color="#ffffff" />
           </Button>
           <Button
-          onPress={() => navigation("setting")}
+            onPress={() => navigation(screens.setting)}
             w={"1/6"}
             h={"full"}
             alignItems={"center"}

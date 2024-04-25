@@ -17,6 +17,7 @@ import { AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
 import { useGlobalContext } from "../../../context/context";
 import CardWhatsApp from "../../../components/CardWhatsApp/CardWhatsApp";
 import { screens } from "../../../mock/screens";
+import Footer from "../../../components/Footer/Footer";
 
 export default function Upload() {
   const [IAgree, setIAgree] = React.useState(false);
@@ -80,7 +81,7 @@ export default function Upload() {
               padding="2px"
               backgroundColor={colors.greenDark}
               w="100%"
-              h={"24"}
+              h={"100px"}
               rounded="xl"
               mt={6}
             >
@@ -102,7 +103,7 @@ export default function Upload() {
                 alignItems="center"
                 paddingX={2}
               >
-                <Text fontFamily="PathwayRegular">
+                <Text fontFamily="PathwayRegular" py={2} fontSize={12}>
                   Após o envio dos documentos, formularemos o contrato de
                   divórcio e enviaremos uma notificação para que você visualize
                   e aceito os termos.
@@ -129,8 +130,8 @@ export default function Upload() {
               <Button
                 disabled={!IAgree}
                 backgroundColor={IAgree ? colors.yellow : colors.disabled}
-                w="270px"
                 h={52}
+                px="4"
                 rounded="2xl"
                 textDecorationColor="black"
                 flexDirection="row"
@@ -143,7 +144,7 @@ export default function Upload() {
                 }
               >
                 <Text
-                  fontSize={20}
+                  fontSize={16}
                   fontFamily="PathwayBold"
                   color={IAgree ? "black" : "gray.400"}
                 >
@@ -166,6 +167,7 @@ export default function Upload() {
                 <Text
                   color={"white"}
                   fontFamily="PathwayBold"
+                  fontSize={12}
                   w={"12"}
                   textAlign={"center"}
                 >
@@ -175,6 +177,7 @@ export default function Upload() {
                   color={"white"}
                   fontFamily="PathwayBold"
                   w={"12"}
+                  fontSize={12}
                   textAlign={"center"}
                 >
                   NOME
@@ -191,7 +194,7 @@ export default function Upload() {
               <Button
                 onPress={() => navigation(screens.upload)}
                 backgroundColor={colors.yellow}
-                w="230px"
+                px="4"
                 h={52}
                 rounded="2xl"
                 textDecorationColor="black"
@@ -200,7 +203,7 @@ export default function Upload() {
                   <MaterialIcons name="navigate-next" size={24} color="black" />
                 }
               >
-                <Text fontSize={20} fontFamily="PathwayBold">
+                <Text fontSize={16} fontFamily="PathwayBold">
                   Salvar e Proximo
                 </Text>
               </Button>
@@ -209,6 +212,7 @@ export default function Upload() {
           </VStack>
         </Center>
       </ScrollView>
+      <Footer />
     </>
   );
 }

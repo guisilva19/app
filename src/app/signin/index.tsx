@@ -79,9 +79,7 @@ export default function SignIn() {
                 colorScheme={colors.yellow}
                 onPress={() => navigation("user")}
               >
-                <Text fontSize={18} fontFamily="PathwayBold">
-                  Entrar
-                </Text>
+                <Text fontFamily="PathwayBold">Entrar</Text>
               </Button>
 
               <Button
@@ -94,14 +92,11 @@ export default function SignIn() {
                 borderWidth={1}
                 onPress={() => navigation("signup")}
               >
-                <Text fontSize={18} fontFamily="PathwayBold">
-                  Quero me Cadastrar
-                </Text>
+                <Text fontFamily="PathwayBold">Quero me Cadastrar</Text>
               </Button>
 
               <Link
                 _text={{
-                  fontSize: "18px",
                   fontWeight: "600",
                   fontFamily: "PathwayBold",
                   color: "black",
