@@ -120,7 +120,7 @@ export default function Primary() {
             </VStack>
             <Box alignItems="flex-end" w="100%">
               <Button
-                onPress={() => navigation(screens.second)}
+                onPress={() => navigation(screens.calendar, true)}
                 backgroundColor={colors.yellow}
                 w="180px"
                 h={52}

@@ -8,7 +8,7 @@ interface IContext {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   selected: string;
 
-  navigation: (path: string) => void;
+  navigation: (path: string, alterFooter?: boolean) => void;
 }
 
 export const Context = React.createContext<IContext>({} as IContext);
@@ -22,9 +22,11 @@ export const ContextProvider = ({
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState("setting");
 
-  const navigation = (path: string) => {
+  const navigation = (path: string, alterFooter?: boolean) => {
     router.navigate("/" + path);
-    setSelected(path);
+    if (alterFooter) {
+      setSelected(path);
+    }
   };
 
   return (

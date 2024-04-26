@@ -10,4 +10,5 @@ export interface IScreens {
   setting: string;
   upload: string;
   calendar: string;
+  certificate: string;
 }

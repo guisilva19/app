@@ -1,5 +1,5 @@
 import { AntDesign } from "@expo/vector-icons";
-import {  Button, Center, HStack } from "native-base";
+import { Button, Center, HStack } from "native-base";
 import { colors } from "../../theme/colors";
 import { useGlobalContext } from "../../context/context";
 import { screens } from "../../mock/screens";
@@ -23,7 +23,7 @@ export default function Footer() {
           <Button
             w={"1/6"}
             h={"full"}
-            onPress={() => navigation(screens.calendar)}
+            onPress={() => navigation(screens.calendar, true)}
             alignItems={"center"}
             justifyContent={"center"}
             opacity={selected === "calendar" ? 1 : 50}
@@ -38,7 +38,7 @@ export default function Footer() {
           <Button
             w={"1/6"}
             h={"full"}
-            onPress={() => navigation(screens.upload)}
+            onPress={() => navigation(screens.upload, true)}
             alignItems={"center"}
             justifyContent={"center"}
             opacity={selected === "upload" ? 1 : 50}
@@ -63,6 +63,7 @@ export default function Footer() {
             <AntDesign name="creditcard" size={size} color="#ffffff" />
           </Button>
           <Button
+            onPress={() => navigation(screens.user, true)}
             w={"1/6"}
             h={"full"}
             alignItems={"center"}
@@ -75,7 +76,7 @@ export default function Footer() {
             <AntDesign name="user" size={size} color="#ffffff" />
           </Button>
           <Button
-            onPress={() => navigation(screens.setting)}
+            onPress={() => navigation(screens.setting, true)}
             w={"1/6"}
             h={"full"}
             alignItems={"center"}

@@ -1,7 +1,7 @@
 import { Box, HStack, Text, VStack } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
-import { redirectWhatsApp } from "../../utils/whatsapp/redirect";
+import { redirectWhatsApp } from "../../utils/redirects";
 
 export default function CardWhatsApp() {
   return (

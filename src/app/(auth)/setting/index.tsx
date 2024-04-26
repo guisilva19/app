@@ -12,7 +12,8 @@ import {
 } from "@expo/vector-icons";
 import Footer from "../../../components/Footer/Footer";
 import { useGlobalContext } from "../../../context/context";
-import { redirectWhatsApp } from "../../../utils/whatsapp/redirect";
+import { redirectWhatsApp } from "../../../utils/redirects";
+import { screens } from "../../../mock/screens";
 
 export default function Setting() {
   const { navigation } = useGlobalContext();
@@ -43,7 +44,7 @@ export default function Setting() {
 
             <VStack mt={12}>
               <Button
-                onPress={() => navigation("change-password")}
+                onPress={() => navigation(screens.changePassword)}
                 justifyContent={"flex-start"}
                 backgroundColor={"transparent"}
                 leftIcon={<AntDesign name="lock1" size={25} color="black" />}
@@ -58,6 +59,7 @@ export default function Setting() {
               </Button>
 
               <Button
+                onPress={() => navigation(screens.certificate)}
                 justifyContent={"flex-start"}
                 backgroundColor={"transparent"}
                 leftIcon={

@@ -1,27 +1,19 @@
 import {
   Box,
-  Button,
   Center,
   HStack,
   Heading,
-  Modal,
   Text,
   VStack,
 } from "native-base";
 import { colors } from "../../../theme/colors";
-import React, { useState } from "react";
+import React from "react";
 
 import { ScrollView } from "react-native";
 import {
   AntDesign,
-  FontAwesome,
-  MaterialIcons,
-  MaterialCommunityIcons,
-  Feather,
 } from "@expo/vector-icons";
 import Footer from "../../../components/Footer/Footer";
-import { useGlobalContext } from "../../../context/context";
-import { redirectWhatsApp } from "../../../utils/whatsapp/redirect";
 
 export default function Calendar() {
   return (

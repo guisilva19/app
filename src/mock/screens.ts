@@ -12,4 +12,5 @@ export const screens: IScreens = {
   setting: "setting",
   upload: "upload",
   calendar: "calendar",
+  certificate: "certificate",
 };
