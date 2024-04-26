@@ -23,6 +23,7 @@ export default function Footer() {
           <Button
             w={"1/6"}
             h={"full"}
+            onPress={() => navigation(screens.calendar)}
             alignItems={"center"}
             justifyContent={"center"}
             opacity={selected === "calendar" ? 1 : 50}

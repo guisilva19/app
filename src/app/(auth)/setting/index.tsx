@@ -38,7 +38,7 @@ export default function Setting() {
               Configurações
             </Heading>
             <Text fontFamily="PathwayRegular" fontSize={16} mt={2}>
-              Acompanhe abaixo as etapas agendas
+              Acompanhe abaixo as etapas agendadas
             </Text>
 
             <VStack mt={12}>

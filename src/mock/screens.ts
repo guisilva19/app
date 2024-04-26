@@ -11,4 +11,5 @@ export const screens: IScreens = {
   conjuge: "conjuge",
   setting: "setting",
   upload: "upload",
+  calendar: "calendar",
 };

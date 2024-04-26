@@ -1,12 +1,13 @@
 export interface IScreens {
-  primary: "index";
-  second: "second";
-  user: "user";
-  forgot: "forgot";
-  signup: "signup";
-  signin: "signin";
-  changePassword: "change-password";
-  conjuge: "conjuge";
-  setting: "setting";
-  upload: "upload";
+  primary: string;
+  second: string;
+  user: string;
+  forgot: string;
+  signup: string;
+  signin: string;
+  changePassword: string;
+  conjuge: string;
+  setting: string;
+  upload: string;
+  calendar: string;
 }
