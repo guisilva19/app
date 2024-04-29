@@ -11,6 +11,7 @@
   "dependencies": {
     "add": "^2.0.6",
     "expo": "^50.0.17",
+    "expo-document-picker": "^11.10.1",
     "expo-font": "^11.10.3",
     "expo-linking": "^6.2.2",
     "expo-router": "3.4.9",

@@ -3,6 +3,7 @@ import {
   Button,
   Center,
   Checkbox,
+  FlatList,
   HStack,
   Heading,
   Text,
@@ -11,17 +12,88 @@ import {
 import { colors } from "../../../theme/colors";
 import React from "react";
 
-import { ScrollView } from "react-native";
+import { Alert, ScrollView } from "react-native";
 import { AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
 
 import { useGlobalContext } from "../../../context/context";
 import CardWhatsApp from "../../../components/CardWhatsApp/CardWhatsApp";
 import { screens } from "../../../mock/screens";
 import Footer from "../../../components/Footer/Footer";
+import * as DocumentPicker from "expo-document-picker";
+import { bodyFile } from "../../../utils/bodyFile";
+import UploadFile from "../../../components/Upload/Upload";
 
 export default function Upload() {
   const [IAgree, setIAgree] = React.useState(false);
+  const [isVisibleModal, setIsVisibleModal] = React.useState(false);
+  const [selectedFile, setSelectedFile] = React.useState<any>([]);
+  const regex = /\(\d+\)/;
   const { navigation } = useGlobalContext();
+
+  const pickDocument = async (value: any) => {
+    try {
+      const result: any = await DocumentPicker.getDocumentAsync();
+      if (result.type !== "cancel") {
+        const existType = selectedFile.find((file: any) => file.name === value);
+        if (!existType) {
+          const filtered = selectedFile.filter(
+            (file: any) => file.nome.replace(regex, "").trim() === value
+          );
+          if (filtered[0] === undefined) {
+            const body = await bodyFile(value, result.assets[0]);
+            setSelectedFile([...selectedFile, body]);
+          } else {
+            value = value + ` (${filtered.length})`;
+            const body = await bodyFile(value, result.assets[0]);
+            setSelectedFile([...selectedFile, body]);
+          }
+        }
+      }
+      setIsVisibleModal(false);
+    } catch (err) {
+      setIsVisibleModal(false);
+    }
+  };
+
+  const handleSaveAndNext = () => {
+    if (selectedFile.length < 5) {
+      Alert.alert("Adicione todos os documentos necessários, por favor.", "", [
+        {
+          text: "Ok",
+          onPress: () => null,
+        },
+      ]);
+    } else {
+      // saveDocuments(selectedFile);
+    }
+  };
+
+  const handleDelete = (indexToRemove: any) => {
+    setSelectedFile((prevSelectedFile: any[]) =>
+      prevSelectedFile.filter((_: any, index: any) => index !== indexToRemove)
+    );
+  };
+
+  const CardUp = ({ item, index }: { item: any; index: number }) => {
+    return (
+      <HStack alignItems={"center"} h={"25px"}>
+        <Box w={"15%"} alignItems={"center"}>
+          <AntDesign name="file1" size={20} color="black" />
+        </Box>
+        <Box w={"70%"}>
+          <Text ml={"10px"}>{item.nome}</Text>
+        </Box>
+        <Box w={"15%"} alignItems={"center"}>
+          <Feather
+            name="trash-2"
+            size={20}
+            color="red"
+            onPress={() => handleDelete(index)}
+          />
+        </Box>
+      </HStack>
+    );
+  };
 
   return (
     <>
@@ -128,6 +200,7 @@ export default function Upload() {
 
             <Center mt={6}>
               <Button
+                onPress={() => setIsVisibleModal(true)}
                 disabled={!IAgree}
                 backgroundColor={IAgree ? colors.yellow : colors.disabled}
                 h={52}
@@ -183,16 +256,18 @@ export default function Upload() {
                   NOME
                 </Text>
               </HStack>
-              <VStack
-                minH={"10"}
-                maxH={"32"}
-                backgroundColor={"white"}
-              ></VStack>
+              <VStack minH={"10"} maxH={"32"} backgroundColor={"white"}>
+                <FlatList
+                  data={selectedFile}
+                  renderItem={CardUp}
+                  keyExtractor={(item, index) => index.toString()}
+                />
+              </VStack>
             </Box>
 
             <Box alignItems="flex-end" w="100%" mt={10}>
               <Button
-                onPress={() => navigation(screens.upload)}
+                onPress={() => handleSaveAndNext()}
                 backgroundColor={colors.yellow}
                 px="4"
                 h={52}
@@ -213,6 +288,12 @@ export default function Upload() {
         </Center>
       </ScrollView>
       <Footer />
+
+      <UploadFile
+        pickDocument={pickDocument}
+        isVisibleModal={isVisibleModal}
+        setIsVisibleModal={setIsVisibleModal}
+      />
     </>
   );
 }
