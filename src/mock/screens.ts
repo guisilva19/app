@@ -13,4 +13,5 @@ export const screens: IScreens = {
   upload: "upload",
   calendar: "calendar",
   certificate: "certificate",
+  payment: "payment",
 };

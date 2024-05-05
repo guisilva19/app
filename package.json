@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-assets/slider": "^7.2.1",
     "add": "^2.0.6",
     "expo": "^50.0.17",
     "expo-document-picker": "^11.10.1",

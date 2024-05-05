@@ -51,11 +51,12 @@ export default function Footer() {
           <Button
             w={"1/6"}
             h={"full"}
+            onPress={() => navigation(screens.payment, true)}
             alignItems={"center"}
             justifyContent={"center"}
-            opacity={selected === "creditcard" ? 1 : 50}
+            opacity={selected === "payment" ? 1 : 50}
             backgroundColor={
-              selected === "creditcard"
+              selected === "payment"
                 ? colors.greenDarkOpacity
                 : colors.greenDark
             }
