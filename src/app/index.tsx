@@ -9,13 +9,13 @@ import {
   Heading,
   HStack,
   Button,
+  ScrollView,
 } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useGlobalContext } from "../context/context";
 import { screens } from "../mock/screens";
-import { ScrollView } from "react-native";
 
 export default function Primary() {
   const { navigation } = useGlobalContext();
@@ -27,15 +27,13 @@ export default function Primary() {
   return (
     <>
       <Box
-        w="100%"
-        h="100%"
         justifyContent="start"
         alignItems="center"
         style={{ backgroundColor: colors.background }}
       >
-        <ScrollView>
+        <ScrollView w={"full"}>
           <Center>
-            <VStack p="2" py="8" w="100%" maxW="350">
+            <VStack p="2" py="10" w="100%" maxW="350">
               <Center>
                 <Image source={require("../assets/illustration1.png")} />
               </Center>
@@ -92,17 +90,19 @@ export default function Primary() {
                   alignItems="center"
                   paddingX={2}
                 >
-                  <Text fontFamily="PathwayRegular">
-                    Este processo é legalmente válido de acordo com as leis
-                    brasileiras
+                  <Text fontFamily="PathwayRegular" fontSize={"12px"}>
+                    Este processo é legalmente válido {"\n"}de acordo com as
+                    leis brasileiras
                   </Text>
                 </Box>
               </HStack>
 
               <HStack
-                mt={8}
+                mt={5}
+                borderWidth={2}
+                borderColor={colors.greenDark}
                 rounded="lg"
-                width="230px"
+                width="100%"
                 h={52}
                 justifyContent="space-between"
                 backgroundColor="white"
@@ -110,15 +110,15 @@ export default function Primary() {
                 paddingX={5}
                 space={2}
               >
-                <Box w="20%">
+                <Box w="15%">
                   <Feather name="youtube" size={30} color="black" />
                 </Box>
-                <Text w="80%" fontFamily="PathwayRegular">
-                  Se tiver dúvidas assista {"\n"}a este vídeo explicativo.
+                <Text w="90%" fontFamily="PathwayRegular" fontSize={"12px"}>
+                  Assista a este vídeo explicativo
                 </Text>
               </HStack>
             </VStack>
-            <Box alignItems="flex-end" w="100%">
+            <Box alignItems="flex-end" w="80%" mb={10}>
               <Button
                 onPress={() => navigation(screens.second)}
                 backgroundColor={colors.yellow}
