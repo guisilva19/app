@@ -235,7 +235,7 @@ export default function User() {
 
               <Box alignItems="flex-end" w="100%" mt={10}>
                 <Button
-                  onPress={() => navigation(screens.upload)}
+                  onPress={() => navigation(screens.upload, true)}
                   backgroundColor={colors.yellow}
                   h={52}
                   px={"4"}

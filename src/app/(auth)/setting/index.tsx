@@ -1,4 +1,4 @@
-import { Button, Center, Heading, Modal, Text, VStack } from "native-base";
+import { Button, Center, Heading, Modal, Pressable, Text, VStack } from "native-base";
 import { colors } from "../../../theme/colors";
 import React, { useState } from "react";
 
@@ -44,7 +44,7 @@ export default function Setting() {
 
             <VStack mt={12}>
               <Button
-                onPress={() => navigation(screens.changePassword)}
+                onPress={() => console.log("teste")}
                 justifyContent={"flex-start"}
                 backgroundColor={"transparent"}
                 leftIcon={<AntDesign name="lock1" size={25} color="black" />}

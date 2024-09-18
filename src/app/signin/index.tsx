@@ -17,6 +17,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import Loading from "../../components/Loading/Loading";
 import { useGlobalContext } from "../../context/context";
+import { screens } from "../../mock/screens";
 
 export default function SignIn() {
   const [show, setShow] = React.useState(false);
@@ -77,7 +78,7 @@ export default function SignIn() {
                 rounded="2xl"
                 mx="auto"
                 colorScheme={colors.yellow}
-                onPress={() => navigation("user")}
+                onPress={() => navigation(screens.user, true)}
               >
                 <Text fontFamily="PathwayBold">Entrar</Text>
               </Button>

@@ -17,7 +17,6 @@ import { AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
 
 import { useGlobalContext } from "../../../context/context";
 import CardWhatsApp from "../../../components/CardWhatsApp/CardWhatsApp";
-import { screens } from "../../../mock/screens";
 import Footer from "../../../components/Footer/Footer";
 import * as DocumentPicker from "expo-document-picker";
 import { bodyFile } from "../../../utils/bodyFile";
