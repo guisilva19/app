@@ -20,10 +20,6 @@ import { screens } from "../mock/screens";
 export default function Primary() {
   const { navigation } = useGlobalContext();
 
-  // useEffect(() => {
-  //   navigation("user");
-  // }, []);
-
   return (
     <>
       <Box
@@ -33,7 +29,7 @@ export default function Primary() {
       >
         <ScrollView w={"full"}>
           <Center>
-            <VStack p="2" py="10" w="100%" maxW="350">
+            <VStack p="2" py="10" w="100%" maxW="360">
               <Center>
                 <Image source={require("../assets/illustration1.png")} />
               </Center>
