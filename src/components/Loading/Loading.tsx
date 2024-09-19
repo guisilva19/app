@@ -6,7 +6,7 @@ export default function Loading() {
   return (
     <Center
       position="absolute"
-      zIndex="20"
+      zIndex="100"
       w="full"
       h="full"
       backgroundColor={colors.background}
